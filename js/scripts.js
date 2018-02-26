@@ -39,7 +39,7 @@ function movieSelected(id) {
 	var searchText = $('#searchText').val();
 	sessionStorage.setItem('movieId', id);
 	sessionStorage.setItem('searchQuery', searchText);
-	window.location = 'movie.html';
+	window.location = 'movie.php';
 	return false;
 }
 
@@ -50,59 +50,22 @@ function getMovie() {
 		method: 'GET',
 		url: 'http://www.omdbapi.com/?apikey=a336cd51&i=' + movieId,
 		success: function(res) {
-			console.log(res);
+//			console.log(res);
 			var movie = res;
 			var movieType = movie.Type[0].toUpperCase() + movie.Type.substr(1);
-			console.log(movieType);
-			var output = '<div class="row">'; //  class="col-xs-8 offset-xs-4" push-xs-2
-			
-			output += '<div class="col-xs-8 col-md-4"><h2>';//</div><div class="row">
-			output += movie.Title;
-			output += '</h2><img src="';
-			output += movie.Poster;
-			output += '" class="thumbnail"></div><div class="col-md-8"><h2> ';
-//			output += movie.Title;
-			output += '</h2><ul class="list-group">';
-			output += '<li class="list-group-item"><strong>Genre:</strong> ';
-			output += movie.Genre;
-			output += '</li>';
-			output += '<li class="list-group-item"><strong>Released:</strong> ';
-			output += movie.Released;
-			output += '</li>';
-			output += '<li class="list-group-item"><strong>Rated:</strong> ';
-			output += movie.Rated;
-		    output += '</li>';
-			output += '<li class="list-group-item"><strong>Media type:</strong> ';
-			output += movieType;
-		    output += '</li>';
-			output += '<li class="list-group-item"><strong>Runtime:</strong> ';
-			output += movie.Runtime;
-		    output += '</li>';
-			output += '<li class="list-group-item"><strong>IMDB Rating:</strong> ';
-			output += movie.imdbRating;
-		    output += '</li>';
-			output += '<li class="list-group-item"><strong>Director:</strong> ';
-			output += movie.Director;
-			output += '</li>';
-			output += '<li class="list-group-item"><strong>Writer:</strong> ';
-			output += movie.Writer;
-			output += '</li>';
-			output += '<li class="list-group-item"><strong>Actors:</strong> ';
-			output += movie.Actors;
-			output += '</li>';
-			output += '</ul></div></div>';
-			output += '<div class="row">';
-			output += '<div class="col-sm-6 offset-mdd-2">';
-			output += '<div class="well">';
-			output += '<h3>Plot</h3>';
-			output += movie.Plot;
-			output += '<hr>';
-			output += '<a href="http://imdb.com/title/';
-			output += movie.imdbID;
-			output += '" target="_blank" class="btn btn-primary">View IMDB</a>';
-			output += '<a href="index.html" class="btn btn-default">Go Back to Search</a>';
-			output += '</div></div></div>';
-			$('#movie').html(output);
+			$('.movie-title').text(movie.Title);
+			$('.movie-poster').attr('src', movie.Poster);
+			$('.movie-genre').text(movie.Genre);
+			$('.movie-released').text(movie.Released);
+			$('.movie-rated').text(movie.Rated);
+			$('.movie-type').text(movieType);
+			$('.movie-runtime').text(movie.Runtime);
+			$('.movie-imdb-rating').text(movie.imdbRating);
+			$('.movie-director').text(movie.Director);
+			$('.movie-writer').text(movie.Writer);
+			$('.movie-actor-list').text(movie.Actors);
+			$('.movie-plot').text(movie.Plot);
+			$('.movie-imdb').attr('href', 'http://imdb.com/title/' + movie.imdbID);
 		}
 	});
 }
