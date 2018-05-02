@@ -50,27 +50,24 @@ function getMovie() {
 		method: 'GET',
 		url: 'http://www.omdbapi.com/?apikey=a336cd51&i=' + movieId,
 		success: function(res) {
-//			console.log(res);
 			var movie = res;
 			var movieType = movie.Type[0].toUpperCase() + movie.Type.substr(1);
 			$('.movie-title').text(movie.Title);
 			$('.movie-poster').attr('src', movie.Poster);
-			$('.movie-genre').text(movie.Genre);
-			$('.movie-released').text(movie.Released);
-			$('.movie-rated').text(movie.Rated);
-			$('.movie-type').text(movieType);
-			$('.movie-runtime').text(movie.Runtime);
-			$('.movie-imdb-rating').text(movie.imdbRating);
-			$('.movie-director').text(movie.Director);
-			$('.movie-writer').text(movie.Writer);
-			$('.movie-actor-list').text(movie.Actors);
-			$('.movie-plot').text(movie.Plot);
+			$('.movie-genre').append(movie.Genre);
+			$('.movie-released').append(movie.Released);
+			$('.movie-rated').append(movie.Rated);
+			$('.movie-type').append(movieType);
+			$('.movie-runtime').append(movie.Runtime);
+			$('.movie-imdb-rating').append(movie.imdbRating);
+			$('.movie-director').append(movie.Director);
+			$('.movie-writer').append(movie.Writer);
+			$('.movie-actor-list').append(movie.Actors);
+			$('.movie-plot').append(movie.Plot);
 			$('.movie-imdb').attr('href', 'http://imdb.com/title/' + movie.imdbID);
 		}
 	});
 }
-
-
 
 // http://www.omdbapi.com?
 //	http://img.omdbapi.com/?apikey=a336cd51&
