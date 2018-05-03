@@ -3,7 +3,7 @@
 		<h3 class="text-center">Search For Any Movie</h3>
 		<form id="searchForm">
 			<input type="text" class="form-control" id="searchText" placeholder="Search Movies" ng-model="movieQuery">
-			<button ng-click="MovieController()">Search Movie</button>
+			<button ng-click="findMovie()">Search Movie</button>
 		</form>
 	</div>
 </div>
@@ -13,7 +13,7 @@
 <!--	<p>{{movieQuery}}</p>-->
 	
 		<div class="col-md-4 col-lg-3 col-sm-6 offset-sm-3"
-			 ng-repeat="movie in movies">
+			 ng-repeat="movie in movies" ng-if="movie.Poster !== 'N/A'">
 <!--		 ng-repeat="movie in movies"-->
 			<div class="well text-center">
 				<img ng-src="{{movie.Poster}}">
