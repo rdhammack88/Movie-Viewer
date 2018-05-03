@@ -1,4 +1,5 @@
-var movieApp = angular.module('movieApp', ['ngRoute', 'movieControllers']);
+var movieApp = angular.module('movieApp', 
+							  ['ngRoute', 'movieControllers']);
 
 movieApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {
