@@ -24,6 +24,7 @@
 					<p class="details-btn">
 						<a class="btn btn-primary" href="/movie/:{{movie.imdbID.toString()}}">Movie Details</a>
 					</p>
+					<p>{{movie.imdbID.toString()}}</p>
 				</div>
 			</div>
 		</div>

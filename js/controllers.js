@@ -11,6 +11,7 @@ movieControllers.controller('MovieSearchController',
 				$scope.movies = res.data.Search;
 				console.log($scope.movies);
 				console.log($scope.movieQuery);
+//				console.log($scope.movie.imdbID.toString())
 	//			$scope.movieID = movie.imdbID.toString();
 			});
 		}
@@ -39,9 +40,10 @@ movieControllers.controller('MovieDetailsController',
 	function MovieController($scope, $http) {
 		$http({
 			method: 'GET',
-			url: 'http://www.omdbapi.com/?apikey=a336cd51&i=tt1436480'
+			url: 'http://www.omdbapi.com/?apikey=a336cd51&i=tt0099785'
 		}).then(function(res) {
-			$scope.movie = res.data;
+			$scope.movie = res;
+			console.log(res);
 			$scope.movieType = movie.Type[0].toUpperCase() + movie.Type.substr(1);
 			$scope.movieTitle = movie.Title;
 			$scope.moviePoster = movie.Poster;
@@ -54,7 +56,7 @@ movieControllers.controller('MovieDetailsController',
 			$scope.movieWriter = movie.Writer;
 			$scope.movieActors = movie.Actors;
 			$scope.moviePlot = movie.Plot;
-			$scope.movieImdbLink = 'http://imdb.com/title/' + movie.imdbID;
+			$scope.movieImdbLink = 'https://imdb.com/title/' + movie.imdbID;
 		});
 	}
 );
