@@ -37,26 +37,29 @@ movieControllers.directive('enterClick', function() {
 })
 
 movieControllers.controller('MovieDetailsController', 
-	function MovieController($scope, $http) {
+	function MovieController($scope, $http, $routeParams) {
 		$http({
 			method: 'GET',
-			url: 'http://www.omdbapi.com/?apikey=a336cd51&i=tt0099785'
+			url: 'http://www.omdbapi.com/?apikey=a336cd51&i=' + $routeParams.movieId
+			//tt0099785
 		}).then(function(res) {
-			$scope.movie = res;
+			$scope.movie = res.data;//.data.Search;
+			console.log($routeParams.movieId);
 			console.log(res);
-			$scope.movieType = movie.Type[0].toUpperCase() + movie.Type.substr(1);
-			$scope.movieTitle = movie.Title;
-			$scope.moviePoster = movie.Poster;
-			$scope.movieGenre = movie.Genre;
-			$scope.movieReleaseDate = movie.Released;
-			$scope.movieRating = movie.Rated;
-			$scope.movieRuntime = movie.Runtime;
-			$scope.movieImdbRating = movie.imdbRating;
-			$scope.movieDirector = movie.Director;
-			$scope.movieWriter = movie.Writer;
-			$scope.movieActors = movie.Actors;
-			$scope.moviePlot = movie.Plot;
-			$scope.movieImdbLink = 'https://imdb.com/title/' + movie.imdbID;
+			console.log(res.data);
+			$scope.movieType = $scope.movie.Type[0].toUpperCase() + $scope.movie.Type.substr(1);
+			$scope.movieTitle = $scope.movie.Title;
+			$scope.moviePoster = $scope.movie.Poster;
+			$scope.movieGenre = $scope.movie.Genre;
+			$scope.movieReleaseDate = $scope.movie.Released;
+			$scope.movieRating = $scope.movie.Rated;
+			$scope.movieRuntime = $scope.movie.Runtime;
+			$scope.movieImdbRating = $scope.movie.imdbRating;
+			$scope.movieDirector = $scope.movie.Director;
+			$scope.movieWriter = $scope.movie.Writer;
+			$scope.movieActors = $scope.movie.Actors;
+			$scope.moviePlot = $scope.movie.Plot;
+			$scope.movieImdbLink = 'https://imdb.com/title/' + $scope.movie.imdbID;
 		});
 	}
 );
