@@ -1,3 +1,4 @@
+<!--
 <div class="container-fluid">
 	<div class="jumbotron">
 		<h3 class="text-center">Search For Any Movie</h3>
@@ -6,6 +7,7 @@
 		</form>
 	</div>
 </div>
+-->
 
 <div class="container-fluid movie-info">
 	<div id="movie" class="well">

@@ -6,7 +6,7 @@ movieApp.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'js/partials/search_page.php',
 		controller: 'MovieSearchController'
 	})
-	.when('#/movie_details/:movieId', {
+	.when('/movie/:movieId', {
 		templateUrl: 'js/partials/movie_details.php',
 		controller: 'MovieDetailsController'
 	})
