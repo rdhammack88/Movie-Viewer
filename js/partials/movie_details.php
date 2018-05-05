@@ -57,7 +57,7 @@
 					<p class="movie-plot">{{moviePlot}}</p>
 					<hr>
 					<a href="{{movieImdbLink}}" target="_blank" class="btn btn-primary movie-imdb">View IMDB</a>
-					<a href="index.php" class="btn btn-default">Go Back to Search</a>
+					<a href="./#/" class="btn btn-default">Go Back to Search</a>
 				</div>
 			</div>
 		</div>
