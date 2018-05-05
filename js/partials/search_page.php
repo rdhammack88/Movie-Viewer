@@ -22,7 +22,7 @@
 				<div class="details">
 					<h5> {{movie.Title}} </h5>
 					<p class="details-btn">
-						<a class="btn btn-primary" href="/movie/:{{movie.imdbID.toString()}}">Movie Details</a>
+						<a class="btn btn-primary" href="./movie/{{movie.imdbID.toString()}}">Movie Details</a>
 					</p>
 					<p>{{movie.imdbID.toString()}}</p>
 				</div>
