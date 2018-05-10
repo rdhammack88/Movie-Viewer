@@ -1,3 +1,4 @@
+<?php include('../../includes/search_bar.php'); ?>
 <!--
 <div class="container-fluid">
 	<div class="jumbotron">
@@ -14,44 +15,56 @@
 		<div class="row">
 
 			<div class="col-xs-8 col-md-4">
-				<h2 class="movie-title">{{movieTitle}}</h2>
+			<!-- event.currentTarget   ng-class="{heart: heart}"   {{heart}}-->
+			<!-- {'selected-class-name': $index == favorited'}  favMovie($index)-->
+			<!-- {'fas': fullHeart, 'far': emptyHeart}   favMovie() toggle = !toggle-->
+				<h2 class="movie-title">{{movieTitle}} &nbsp;&nbsp; <span ng-click="favMovie()"><i ng-class="toggle ? 'fas' : 'far'" class="fa-heart"></i></span> </h2>
 				<img ng-src="{{moviePoster}}" class="thumbnail movie-poster">
 			</div>
 			<div class="col-md-8">
 				<h2></h2>
 				<ul class="list-group">
 					<li class="list-group-item movie-genre">
-						<strong>Genre: {{movieGenre}}</strong>
+						<strong>Genre:</strong>
+						{{movieGenre}}
 					</li>
 					<li class="list-group-item movie-released">
-						<strong>Released: {{movieReleaseDate}}</strong>
+						<strong>Released:</strong>
+						{{movieReleaseDate}}
 					</li>
 					<li class="list-group-item movie-rated">
-						<strong>Rated: {{movieRating}}</strong>
+						<strong>Rated:</strong>
+						{{movieRating}}
 					</li>
 					<li class="list-group-item movie-type">
-						<strong>Media type: {{movieType}}</strong>
+						<strong>Media type:</strong>
+						{{movieType}}
 					</li>
 					<li class="list-group-item movie-runtime">
-						<strong>Runtime: {{movieRuntime}}</strong>
+						<strong>Runtime:</strong>
+						{{movieRuntime}}
 					</li>
 					<li class="list-group-item movie-imdb-rating">
-						<strong>IMDB Rating: {{movieImdbRating}}</strong>
+						<strong>IMDB Rating:</strong>
+						{{movieImdbRating}}
 					</li>
 					<li class="list-group-item movie-director">
-						<strong>Director: {{movieDirector}}</strong>
+						<strong>Director:</strong>
+						{{movieDirector}}
 					</li>
 					<li class="list-group-item movie-writer">
-						<strong>Writer: {{movieWriter}}</strong>
+						<strong>Writer:</strong>
+						{{movieWriter}}
 					</li>
 					<li class="list-group-item movie-actor-list">
-						<strong>Actors: {{movieActors}}</strong>
+						<strong>Actors:</strong>
+						{{movieActors}}
 					</li>
 				</ul>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6 offset-mdd-2">
+			<div class="col-sm-6 col-md-7 offset-md-4">
 				<div class="well">
 					<h3>Plot</h3>
 					<p class="movie-plot">{{moviePlot}}</p>
@@ -65,13 +78,11 @@
 </div>
 
 <div class="container-fluid movie-reviews">
+<!--
 	<form action="review.php" method="post">
 		<input type="text">
 	</form>
+-->
 </div>
 	
-<!--
-	<script>
-		getMovie();
-	</script>
--->
+<footer></footer>

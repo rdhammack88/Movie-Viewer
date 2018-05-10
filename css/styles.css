@@ -52,6 +52,9 @@
   color: #222;
   float: left; }
 
+footer {
+  height: 100px; }
+
 @media only screen and (min-width: 768px) {
   #movies .col-md-4 {
     max-height: 400px; }
@@ -59,7 +62,11 @@
     height: 80%; }
   #movies div.details {
     height: 20%; }
-  #movies #movie .col-md-8 {
-    padding-top: 38px; } }
+
+  #movie .col-md-8 {
+    padding-top: 38px; }
+  #movie .col-sm-6 {
+    padding-top: 0;
+    margin-top: -50px; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -2,11 +2,13 @@ var movieControllers = angular.module('movieControllers', []);
 
 movieControllers.controller('MovieSearchController', 
 	function MovieController($scope, $http) {
+	
+		
 
 		$scope.findMovie = function() {
 			$http({
 				method: 'GET',
-				url: 'http://www.omdbapi.com/?apikey=a336cd51&s=' + $scope.movieQuery
+				url: 'https://www.omdbapi.com/?apikey=a336cd51&s=' + $scope.movieQuery
 			}).then(function(res) {
 				$scope.movies = res.data.Search;
 				console.log($scope.movies);
@@ -16,6 +18,16 @@ movieControllers.controller('MovieSearchController',
 			});
 		}
 		
+		$scope.storeMovieSession = function() {
+			sessionStorage.setItem('storedMovie', $scope.movieQuery);
+		}
+		
+		if(sessionStorage.getItem('storedMovie')) {
+			$scope.movieQuery = sessionStorage.getItem('storedMovie');
+			$scope.findMovie();
+//			$scope.movieQuery = '';
+		}
+	
 //		document.querySelector('#searchText').on('keypress', function(e) {
 //			if(e.keyCode === 13) {
 //				$('.save-list').click();
@@ -40,7 +52,7 @@ movieControllers.controller('MovieDetailsController',
 	function MovieController($scope, $http, $routeParams) {
 		$http({
 			method: 'GET',
-			url: 'http://www.omdbapi.com/?apikey=a336cd51&i=' + $routeParams.movieId
+			url: 'https://www.omdbapi.com/?apikey=a336cd51&i=' + $routeParams.movieId
 			//tt0099785
 		}).then(function(res) {
 			$scope.movie = res.data;//.data.Search;
@@ -61,6 +73,31 @@ movieControllers.controller('MovieDetailsController',
 			$scope.moviePlot = $scope.movie.Plot;
 			$scope.movieImdbLink = 'https://imdb.com/title/' + $scope.movie.imdbID;
 		});
+	
+		$scope.heart = ['far', 'fas'];
+		$scope.favorited = 0;
+							
+		$scope.favMovie = function($index) {
+			console.log('clicked');
+			
+			$scope.toggle = !$scope.toggle
+			
+//			if($scope.fullHeart) {
+//				$scope.fullHeart = false;
+//				$scope.emptyHeart = true;
+//			} else if($scope.emptyHeart) {
+//				$scope.fullHeart = true;
+//				$scope.emptyHeart = false;
+//			}
+			
+//			$scope.favorited = $index;
+			
+//			if($scope.heart === 'fas') {
+//				$scope.heart = 'far';
+//			} else {
+//				$scope.heart = 'fas';
+//			}
+		}
 	}
 );
 

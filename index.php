@@ -5,7 +5,10 @@
 	<meta name="viewport" content="width=device-width">
 	<title>Movie Info</title>
 	
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/superhero/bootstrap.min.css">
+	
+	<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	<link rel="stylesheet" href="css/styles.css">
 	
 	<script src="lib/angular/angular.min.js"></script>

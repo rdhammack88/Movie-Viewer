@@ -1,3 +1,4 @@
+<?php //include('../../includes/search_bar.php'); ?>
 <div class="container-fluid">
 	<div class="jumbotron">
 		<h3 class="text-center  mb-3">Search For Any Movie</h3>
@@ -22,9 +23,9 @@
 				<div class="details">
 					<h5> {{movie.Title}} </h5>
 					<p class="details-btn">
-						<a class="btn btn-primary" href="./#/movie/{{movie.imdbID.toString()}}">Movie Details</a>
+						<a class="btn btn-primary" href="./#/movie/{{movie.imdbID.toString()}}" ng-click="storeMovieSession()">Movie Details</a>
 					</p>
-					<p>{{movie.imdbID.toString()}}</p>
+<!--					<p>{{movie.imdbID.toString()}}</p>-->
 				</div>
 			</div>
 		</div>

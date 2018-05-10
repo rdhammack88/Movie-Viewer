@@ -79,6 +79,10 @@
 	}
 }
 
+footer {
+	height: 100px;
+}
+
 @media only screen and (min-width: 768px) {
 	#movies {
 		.col-md-4 {
@@ -92,9 +96,16 @@
 		div.details {
 			height: 20%;
 		}
+	}
 
-		#movie .col-md-8 {
+	#movie {
+		.col-md-8 {
 			padding-top: 38px;
+		}
+		
+		.col-sm-6 {
+			padding-top: 0;
+			margin-top: -50px;
 		}
 	}
 }
