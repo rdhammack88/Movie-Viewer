@@ -8,7 +8,7 @@ movieControllers.controller('MovieSearchController',
 		$scope.findMovie = function() {
 			$http({
 				method: 'GET',
-				url: 'https://www.omdbapi.com/?apikey=a336cd51&s=' + $scope.movieQuery
+				url: 'https://www.omdbapi.com/?apikey=*******&s=' + $scope.movieQuery
 			}).then(function(res) {
 				$scope.movies = res.data.Search;
 				console.log($scope.movies);
@@ -52,7 +52,7 @@ movieControllers.controller('MovieDetailsController',
 	function MovieController($scope, $http, $routeParams) {
 		$http({
 			method: 'GET',
-			url: 'https://www.omdbapi.com/?apikey=a336cd51&i=' + $routeParams.movieId
+			url: 'https://www.omdbapi.com/?apikey=**********&i=' + $routeParams.movieId
 			//tt0099785
 		}).then(function(res) {
 			$scope.movie = res.data;//.data.Search;
