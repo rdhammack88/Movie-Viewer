@@ -10,7 +10,11 @@ movieControllers.controller('MovieSearchController',
 				method: 'GET',
 				url: 'https://www.omdbapi.com/?apikey=a336cd51&s=' + $scope.movieQuery
 			}).then(function(res) {
+				console.log($http);
+				console.log($http.pendingRequests);
+//			}).then(function(res) {
 				$scope.movies = res.data.Search;
+				console.log($http.pendingRequests.length);
 				console.log($scope.movies);
 				console.log($scope.movieQuery);
 //				console.log($scope.movie.imdbID.toString())
