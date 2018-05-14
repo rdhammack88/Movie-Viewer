@@ -28,7 +28,7 @@ movieApp.config(['$routeProvider', function($routeProvider) {
 //	console.log(searchText);
 //	$.ajax({
 //		method: 'GET',
-//		url: 'http://www.omdbapi.com/?apikey=a336cd51&s=' + searchText,
+//		url: 'http://www.omdbapi.com/?apikey=*******&s=' + searchText,
 //		success: function(res) {
 //			var movies = res.Search;
 //			var output = '';
@@ -63,7 +63,7 @@ movieApp.config(['$routeProvider', function($routeProvider) {
 //	
 //	$.ajax({
 //		method: 'GET',
-//		url: 'http://www.omdbapi.com/?apikey=a336cd51&i=' + movieId,
+//		url: 'http://www.omdbapi.com/?apikey=*********&i=' + movieId,
 //		success: function(res) {
 //			var movie = res;
 //			var movieType = movie.Type[0].toUpperCase() + movie.Type.substr(1);
@@ -83,6 +83,3 @@ movieApp.config(['$routeProvider', function($routeProvider) {
 //		}
 //	});
 //}
-
-// http://www.omdbapi.com?
-//	http://img.omdbapi.com/?apikey=a336cd51&
