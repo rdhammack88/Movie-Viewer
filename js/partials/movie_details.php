@@ -63,7 +63,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row movie-plot-container">
 			<div class="col-sm-6 col-md-7 offset-md-4">
 				<div class="well">
 					<h3>Plot</h3>
