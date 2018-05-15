@@ -6,6 +6,13 @@
 /* Search Results Page */
 .movie-search-info {
   max-width: 1000px; }
+  .movie-search-info .movie-error {
+    width: 100%;
+    font-size: 22px;
+    text-align: center; }
+  .movie-search-info .pagination-links {
+    text-align: center;
+    margin-top: 60px; }
 
 #movies .col-md-4 {
   margin: 100px 0 100px;
