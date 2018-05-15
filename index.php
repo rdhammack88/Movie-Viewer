@@ -14,6 +14,10 @@
 	<script src="lib/angular/angular.min.js"></script>
 	<script src="lib/angular/angular-route.min.js"></script>
 	<script src="js/app.js"></script>
+<!--
+	<script src="js/SearchController.js"></script>
+	<script src="js/DetailsController.js"></script>
+-->
 	<script src="js/controllers.js"></script>
 </head>
 <body ng-view>
