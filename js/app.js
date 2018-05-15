@@ -1,35 +1,40 @@
-var movieApp = angular.module('movieApp', 
-							  ['ngRoute', 'movieControllers']);
-
-movieApp.config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when('/', {
-		templateUrl: 'js/partials/search_page.php',
-		controller: 'MovieSearchController'
-	})
-	.when('/movie/:movieId', {
-		templateUrl: 'js/partials/movie_details.php',
-		controller: 'MovieDetailsController'
-	})
-}]);
-
 //var movieApp = angular.module('movieApp', 
-//							  ['ngRoute']);
+//							  ['ngRoute', 'movieControllers']);
 //
 //movieApp.config(['$routeProvider', function($routeProvider) {
 //	$routeProvider.when('/', {
 //		templateUrl: 'js/partials/search_page.php',
-//		controller: 'SearchController'
+//		controller: 'MovieSearchController'
 //	})
 //	.when('/movie/:movieId', {
 //		templateUrl: 'js/partials/movie_details.php',
-//		controller: 'DetailsController'
+//		controller: 'MovieDetailsController'
 //	})
-//	.when('/login', {
-//		templateUrl: 'user/login.php',
-//		controller: 'LoginController'
-//	})
-//	.otherwise({redirectTo: "/"})
 //}]);
+
+var movieApp = angular.module('movieApp', 
+							  ['ngRoute']);
+
+movieApp.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.when('/', {
+//		templateUrl: 'js/partials/search_page.php',
+		templateUrl: 'includes/search_bar.php',
+		controller: 'SearchController'
+	})
+	.when('/search/:pageNumber', {
+		templateUrl: 'js/partials/search_page.php',
+		controller: 'SearchController'
+	})
+	.when('/movie/:movieId', {
+		templateUrl: 'js/partials/movie_details.php',
+		controller: 'DetailsController'
+	})
+	.when('/login', {
+		templateUrl: 'user/login.php',
+		controller: 'LoginController'
+	})
+	.otherwise({redirectTo: "/"})
+}]);
 
 
 //$(document).ready(function() {

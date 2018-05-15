@@ -11,14 +11,15 @@
 	</div>
 </div>
 
+
 <div class="container movie-search-info">
 	<div id="movies" class="row" ng-if="movieQuery">
 <!--	<p>{{movieQuery}}</p>-->
 
-		<div class="text-danger">{{error}}</div>
+	<div class="text-danger movie-error" ng-hide="movies">{{error}}</div>
 	
 		<div class="col-md-4 col-lg-3 col-sm-6 offset-sm-3"
-			 ng-repeat="movie in movies" ng-if="movie.Poster !== 'N/A'">
+			 ng-repeat="movie in movies" ng-if="movie.Poster !== ''"> <!-- N/A -->
 <!--		 ng-repeat="movie in movies"-->
 			<div class="well text-center">
 				<img ng-src="{{movie.Poster}}">
@@ -31,6 +32,17 @@
 				</div>
 			</div>
 		</div>
-		
+<!--
+		<div ng-repeat="movie in movies" ng-if="movie.Poster === 'N/A'">
+		{{pageNumber + 1}}
+		{{nextPage()}}
+		</div>	
+-->
 	</div>
+	
+		<br/>
+		<div class="pagination-links" ng-if="movies">
+			<p><span> Showing page {{pageNumber}} of {{totalResults}}</span> </p>
+			<p><a ng-click="prevPage()" class="btn btn-primary">Prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="nextPage()" class="btn btn-primary">Next</a></p>
+		</div>
 </div>
