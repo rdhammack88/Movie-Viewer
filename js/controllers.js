@@ -3,23 +3,43 @@ var movieControllers = angular.module('movieControllers', []);
 movieControllers.controller('MovieSearchController', 
 	function MovieController($scope, $http) {
 	
+		var onMovieFind = function(res) {
+			$scope.movies = res.data.Search;
+			
+				console.log(res.data);
+		}
+	
+		var onMovieFindError = function(reason) {
+			$scope.error = "Sorry that movie could not be found. Please try again!";
+			
+				console.log(res.status);
+		}
 		
 
 		$scope.findMovie = function() {
-			$http({
-				method: 'GET',
-				url: 'https://www.omdbapi.com/?apikey=a336cd51&s=' + $scope.movieQuery
-			}).then(function(res) {
-				console.log($http);
-				console.log($http.pendingRequests);
+//			$scope.movies = "Loading...";
+//			$http({
+//				method: 'GET',
+//				url: 'https://www.omdbapi.com/?apikey=a336cd51&s=' + $scope.movieQuery
 //			}).then(function(res) {
-				$scope.movies = res.data.Search;
-				console.log($http.pendingRequests.length);
-				console.log($scope.movies);
-				console.log($scope.movieQuery);
-//				console.log($scope.movie.imdbID.toString())
-	//			$scope.movieID = movie.imdbID.toString();
-			});
+////				console.log($http);
+////				console.log($http.pendingRequests);
+////			}).then(function(res) {
+//				console.log(res.status);
+//				$scope.movies = res.data.Search;
+//				console.log(res.status);
+////				console.log($http.pendingRequests.length);
+////				console.log($scope.movies);
+////				console.log($scope.movieQuery);
+////				console.log($scope.movie.imdbID.toString())
+//	//			$scope.movieID = movie.imdbID.toString();
+//			},
+//				   function(res) {
+//				$scope.movies = "Sorry that movie could not be found. Please try again!";
+//			});
+			
+			
+			$http.get('https://www.omdbapi.com/?apikey=a336cd51&s=' + $scope.movieQuery).then(onMovieFind, onMovieFindError);
 		}
 		
 		$scope.storeMovieSession = function() {

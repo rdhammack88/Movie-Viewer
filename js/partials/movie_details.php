@@ -1,14 +1,4 @@
-<?php include('../../includes/search_bar.php'); ?>
-<!--
-<div class="container-fluid">
-	<div class="jumbotron">
-		<h3 class="text-center">Search For Any Movie</h3>
-		<form id="searchForm">
-			<input type="text" class="form-control" id="searchText" placeholder="Search Movies">
-		</form>
-	</div>
-</div>
--->
+<div ng-include="'includes/search_bar.php'"></div>
 
 <div class="container-fluid movie-info">
 	<div id="movie" class="well">

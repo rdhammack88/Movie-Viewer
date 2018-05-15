@@ -12,6 +12,25 @@ movieApp.config(['$routeProvider', function($routeProvider) {
 	})
 }]);
 
+//var movieApp = angular.module('movieApp', 
+//							  ['ngRoute']);
+//
+//movieApp.config(['$routeProvider', function($routeProvider) {
+//	$routeProvider.when('/', {
+//		templateUrl: 'js/partials/search_page.php',
+//		controller: 'SearchController'
+//	})
+//	.when('/movie/:movieId', {
+//		templateUrl: 'js/partials/movie_details.php',
+//		controller: 'DetailsController'
+//	})
+//	.when('/login', {
+//		templateUrl: 'user/login.php',
+//		controller: 'LoginController'
+//	})
+//	.otherwise({redirectTo: "/"})
+//}]);
+
 
 //$(document).ready(function() {
 //	$('#searchForm').on('submit', function(e) {

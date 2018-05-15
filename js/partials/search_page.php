@@ -1,4 +1,4 @@
-<?php //include('../../includes/search_bar.php'); ?>
+<!--<div ng-include="'includes/search_bar.php'"></div>-->
 <div class="container-fluid">
 	<div class="jumbotron">
 		<h3 class="text-center  mb-3">Search For Any Movie</h3>
@@ -14,6 +14,8 @@
 <div class="container movie-search-info">
 	<div id="movies" class="row" ng-if="movieQuery">
 <!--	<p>{{movieQuery}}</p>-->
+
+		<div class="text-danger">{{error}}</div>
 	
 		<div class="col-md-4 col-lg-3 col-sm-6 offset-sm-3"
 			 ng-repeat="movie in movies" ng-if="movie.Poster !== 'N/A'">
