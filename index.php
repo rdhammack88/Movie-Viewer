@@ -32,14 +32,14 @@
 		
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-md navbar-dark">
-				<h2 class="brand-logo"><a href="./" class="navbar-brand"><i class="fas fa-film"></i> Movie Reviewer </a></h2>
+				<h2 class="brand-logo"><a href="./#/" class="navbar-brand"><i class="fas fa-film"></i> Movie Reviewer </a></h2>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a href="/login" class="nav-link">Login</a></li>
-						<li class="nav-item active"><a href="/signup" class="nav-link ml-3 btn btn-info">Signup</a></li>
+						<li class="nav-item active"><a href="./#/login" class="nav-link">Login</a></li>
+						<li class="nav-item active"><a href="./#/signup" class="nav-link ml-3 btn btn-outline-primary">Signup</a></li>
 					</ul>
 				</div>
 			</nav>
