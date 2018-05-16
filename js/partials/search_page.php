@@ -1,8 +1,9 @@
 <!--<div ng-include="'includes/search_bar.php'"></div>-->
+<!--
 <div class="container-fluid">
 	<div class="jumbotron">
-		<h3 class="text-center  mb-3">Search For Any Movie</h3>
-		<form id="searchForm" class="input-group container  mb-3">
+		<h3 class="text-center mb-3">Search For Any Movie</h3>
+		<form id="searchForm" class="input-group container mb-3">
 			<input type="search" class="form-control" id="searchText" placeholder="Search Movies" aria-label="Search" ng-model="movieQuery">
 			<div class="input-group-append">
 				<button class="btn btn-primary" type="submit" ng-click="findMovie()">Search Movie</button>
@@ -10,6 +11,7 @@
 		</form>
 	</div>
 </div>
+-->
 
 
 <div class="container movie-search-info">
@@ -43,6 +45,6 @@
 		<br/>
 		<div class="pagination-links" ng-if="movies">
 			<p><span> Showing page {{pageNumber}} of {{totalResults}}</span> </p>
-			<p><a ng-click="prevPage()" class="btn btn-primary">Prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="nextPage()" class="btn btn-primary">Next</a></p>
+			<p><a ng-click="prevPage()" class="btn btn-primary" ng-show="pageNumber !== 1">Prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="nextPage()" class="btn btn-primary" ng-show="pageNumber !== totalResults">Next</a></p>
 		</div>
 </div>

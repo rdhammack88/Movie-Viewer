@@ -20,6 +20,7 @@
 //			$log.log($scope.movie);
 		}
 		
+//		$scope.movieQuery = movieSearch.movieQuery;
 		$scope.movieId = $routeParams.movieId;
 		omdb.getMovieDetails($scope.movieId).then(getMovieDetails);
 		

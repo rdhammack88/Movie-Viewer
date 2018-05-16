@@ -1,7 +1,9 @@
 (function() {
 	var app = angular.module("movieApp");
 	
-	var SearchController = function($scope, omdb, $location, $routeParams, $log) {
+	var SearchController = function($scope, omdb, movieSearch, $location, $routeParams, $log) {
+		
+//		$scope.movieQuery = movieSearch.movieQuery;
 		
 		$scope.pageNumber =  $routeParams.pageNumber ? parseInt($routeParams.pageNumber) : 1;
 		
@@ -44,8 +46,13 @@
 		
 		$scope.storeMovieSession = function() {
 			sessionStorage.setItem('storedMovie', $scope.movieQuery);
+//			$scope.movieQuery = movieSearch.movieQuery;
+//			
+//			$scope.watch('movieQuery', function() {
+//				movieSearch.movieQuery = $scope.movieQuery;
+//			})
 		}
-
+//
 		if(sessionStorage.getItem('storedMovie')) {
 			$scope.movieQuery = sessionStorage.getItem('storedMovie');
 			$scope.findMovie($scope.movieQuery);

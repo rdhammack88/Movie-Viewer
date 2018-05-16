@@ -17,8 +17,8 @@ var movieApp = angular.module('movieApp',
 
 movieApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {
-//		templateUrl: 'js/partials/search_page.php',
-		templateUrl: 'includes/search_bar.php',
+		templateUrl: 'js/partials/search_page.php',
+//		templateUrl: 'includes/index.php',
 		controller: 'SearchController'
 	})
 	.when('/search/:pageNumber', {
@@ -32,6 +32,10 @@ movieApp.config(['$routeProvider', function($routeProvider) {
 	.when('/login', {
 		templateUrl: 'user/login.php',
 		controller: 'LoginController'
+	})
+	.when('/signup', {
+		templateUrl: 'user/signup.php',
+		controller: 'SignupController'
 	})
 	.otherwise({redirectTo: "/"})
 }]);

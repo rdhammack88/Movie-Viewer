@@ -1,4 +1,4 @@
-<div ng-include="'includes/search_bar.php'"></div>
+<!--<div ng-include="'includes/search_bar.php'"></div>-->
 <!--
 <div class="container-fluid">
 	<div class="jumbotron">
