@@ -1,3 +1,7 @@
+form {
+  max-width: 800px;
+  margin: 0 auto; }
+
 .brand-logo > a:hover {
   text-decoration: none; }
 
