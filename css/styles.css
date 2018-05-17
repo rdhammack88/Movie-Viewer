@@ -56,6 +56,8 @@ form {
 .movie-info {
   max-width: 1200px; }
 
+#movie .movie-title {
+  text-align: center; }
 #movie .col-sm-6 {
   padding-top: 47px; }
 #movie img {

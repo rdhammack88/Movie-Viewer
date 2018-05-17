@@ -15,13 +15,16 @@
 
 <div class="container-fluid movie-info">
 	<div id="movie" class="well">
+		<div class="row m-auto">
+			<h2 class="movie-title">{{movieTitle}} &nbsp;&nbsp; <span ng-click="favMovie()"><i ng-class="toggle ? 'fas' : 'far'" class="fa-heart"></i></span> </h2>
+		</div>
 		<div class="row">
 
 			<div class="col-xs-8 col-md-4">
 			<!-- event.currentTarget   ng-class="{heart: heart}"   {{heart}}-->
 			<!-- {'selected-class-name': $index == favorited'}  favMovie($index)-->
 			<!-- {'fas': fullHeart, 'far': emptyHeart}   favMovie() toggle = !toggle-->
-				<h2 class="movie-title">{{movieTitle}} &nbsp;&nbsp; <span ng-click="favMovie()"><i ng-class="toggle ? 'fas' : 'far'" class="fa-heart"></i></span> </h2>
+				
 				<img ng-src="{{moviePoster}}" class="thumbnail movie-poster">
 			</div>
 			<div class="col-md-8">
