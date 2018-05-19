@@ -19,6 +19,7 @@
 <!--	<p>{{movieQuery}}</p>-->
 
 	<div class="text-danger movie-error" ng-hide="movies">{{error}}</div>
+	<div class="loading-results" ng-hide="movies">{{loadResults}}</div>
 	
 		<div class="col-md-4 col-lg-3 col-sm-6 offset-sm-3"
 			 ng-repeat="movie in movies" ng-if="movie.Poster !== 'N/A'"> <!-- N/A -->
