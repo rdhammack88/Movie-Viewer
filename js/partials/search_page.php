@@ -22,9 +22,9 @@
 	<div class="loading-results" ng-hide="movies">{{loadResults}}</div>
 	
 		<div class="col-md-4 col-lg-3 col-sm-6 offset-sm-3"
-			 ng-repeat="movie in movies" ng-if="movie.Poster !== 'N/A'"> <!-- N/A -->
+			 ng-repeat="movie in movies"> <!-- N/A -->
 <!--		 ng-repeat="movie in movies"-->
-			<div class="well text-center">
+			<div class="well text-center" ng-if="movie.Poster !== 'N/A'">
 				<img ng-src="{{movie.Poster}}">
 				<div class="details">
 					<h5> {{movie.Title}} </h5>
