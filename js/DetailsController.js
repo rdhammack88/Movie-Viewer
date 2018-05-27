@@ -2,6 +2,14 @@
 	var app = angular.module("movieApp");
 	
 	var DetailsController = function($scope, omdb, $routeParams, $log) {
+		
+		var movieDetailsError = function() {
+			$scope.error = "Sorry, it took longer than expected to load the movie details. Please refresh and try again.";
+		}
+		
+		$scope.loadResults = 'Loading';
+		$scope.toggle = false;
+		
 		var getMovieDetails = function(data) {
 			$scope.movie = data;
 			$scope.movieType = $scope.movie.Type[0].toUpperCase() + $scope.movie.Type.substr(1);
@@ -20,9 +28,17 @@
 //			$log.log($scope.movie);
 		}
 		
+		$scope.favMovie = function() {
+			console.log('clicked');
+			
+			$scope.toggle = !$scope.toggle;
+			
+			console.log($scope.toggle);
+		}
+		
 //		$scope.movieQuery = movieSearch.movieQuery;
 		$scope.movieId = $routeParams.movieId;
-		omdb.getMovieDetails($scope.movieId).then(getMovieDetails);
+		omdb.getMovieDetails($scope.movieId).then(getMovieDetails, movieDetailsError);
 		
 	};
 	

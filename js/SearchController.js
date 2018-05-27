@@ -17,7 +17,7 @@
 			$scope.storeMovieSession();
 //			$scope.movies = movie;
 			$location.path('/search/' + $scope.pageNumber);
-			$scope.loadResults = 'Loading...';
+			$scope.loadResults = 'Loading';
 			
 			omdb.getMovie($scope.movieQuery, $scope.pageNumber).then(function(data) {
 //				$location.path("js/partials/search_page.php");
