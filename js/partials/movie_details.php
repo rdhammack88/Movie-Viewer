@@ -15,10 +15,19 @@
 
 <div class="container-fluid movie-info">
 	<div id="movie" class="well">
-		<div class="row m-auto">
-			<h2 class="movie-title">{{movieTitle}} &nbsp;&nbsp; <span ng-click="favMovie()"><i ng-class="toggle ? 'fas' : 'far'" class="fa-heart"></i></span> </h2>
+	
+		<div class="text-danger movie-error" ng-hide="movieTitle">{{error}}</div>
+		<div class="loading-results" ng-hide="movieTitle || error">
+			{{loadResults}} 
+			<span class="loading-dot1">.</span>
+			<span class="loading-dot2">.</span>
+			<span class="loading-dot3">.</span> 
 		</div>
-		<div class="row">
+		<div class="row m-auto">
+			<h2 class="movie-title" ng-show="movieTitle">{{movieTitle}} &nbsp;&nbsp; <span ng-click="favMovie()"><i ng-class="{'fas' : {{toggle}}, 
+				'far' : {{!toggle}}}" class="fa-heart"></i></span> </h2> <!-- ng-class="toggle ? 'far' : 'fas'"    || {'fas' : toggle} -->
+		</div>
+		<div class="row" ng-show="movieTitle">
 
 			<div class="col-xs-8 col-md-4">
 			<!-- event.currentTarget   ng-class="{heart: heart}"   {{heart}}-->
@@ -28,7 +37,6 @@
 				<img ng-src="{{moviePoster}}" class="thumbnail movie-poster">
 			</div>
 			<div class="col-md-8">
-				<h2></h2>
 				<ul class="list-group">
 					<li class="list-group-item movie-genre">
 						<strong>Genre:</strong>
@@ -69,8 +77,8 @@
 				</ul>
 			</div>
 		</div>
-		<div class="row movie-plot-container">
-			<div class="col-sm-6 col-md-7 offset-md-4">
+		<div class="row movie-plot-container" ng-show="movieTitle">
+			<div class="col-sm-10 col-md-8 offset-md-4 offset-sm-1">
 				<div class="well">
 					<h3>Plot</h3>
 					<p class="movie-plot">{{moviePlot}}</p>

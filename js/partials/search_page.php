@@ -19,7 +19,12 @@
 <!--	<p>{{movieQuery}}</p>-->
 
 	<div class="text-danger movie-error" ng-hide="movies">{{error}}</div>
-	<div class="loading-results" ng-hide="movies">{{loadResults}}</div>
+	<div class="loading-results" ng-hide="movies">
+		{{loadResults}} 
+		<span class="loading-dot1">.</span>
+		<span class="loading-dot2">.</span>
+		<span class="loading-dot3">.</span> 
+	</div>
 	
 		<div class="col-md-4 col-lg-3 col-sm-6 offset-sm-3"
 			 ng-repeat="movie in movies"> <!-- N/A -->
@@ -43,9 +48,9 @@
 -->
 	</div>
 	
-		<br/>
-		<div class="pagination-links" ng-if="movies">
-			<p><span> Showing page {{pageNumber}} of {{totalResults}}</span> </p>
-			<p><a ng-click="prevPage()" class="btn btn-primary" ng-show="pageNumber !== 1">Prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="nextPage()" class="btn btn-primary" ng-show="pageNumber !== totalResults">Next</a></p>
-		</div>
+	<br/>
+	<div class="pagination-links" ng-if="movies">
+		<p><span> Showing page {{pageNumber}} of {{totalResults}}</span> </p>
+		<p><a ng-click="prevPage()" class="btn btn-primary" ng-show="pageNumber !== 1">Prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="nextPage()" class="btn btn-primary" ng-show="pageNumber !== totalResults">Next</a></p>
+	</div>
 </div>
