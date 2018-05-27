@@ -1,0 +1,78 @@
+/* Movie Info Display Page */
+.movie-info {
+	max-width: 1200px;
+	
+	.loading-results {
+		width: 100vw;
+		font-size: 4.4em;
+		text-align: center;
+
+		.loading-dot1 {
+			animation: loading-dot1 .4s infinite;
+		}
+
+		.loading-dot2 {
+			animation: loading-dot2 1s infinite;
+		}
+
+		.loading-dot3 {
+			animation: loading-dot3 1s infinite;
+		}
+	}
+	
+	.movie-error {
+		width: 90vw;
+		margin: 0 auto;
+		font-size: 1.4em;
+		text-align: center;
+	}
+
+	#movie {
+		.movie-title {
+			text-align: center;
+			margin-bottom: 5%;
+		}
+
+		.col-sm-6 {
+			padding-top: 47px;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		ul li {
+			text-align: right;
+		}
+
+		ul li strong {
+			color: #222;
+			float: left;
+		}
+		
+		.movie-plot-container {
+			margin-top: 20px;
+		}
+
+		@include break(768px) {
+			.col-md-8 {
+//				padding-top: 38px;
+			}
+
+			.movie-plot-container {
+//				margin-top: 70px;
+			}
+		}
+		
+		@include break(1200px) {
+			.col-sm-6 {
+				padding-top: 0;
+				margin-top: -50px;
+			}
+			
+			.movie-plot-container {
+				margin-top: -25px;
+			}
+		}
+	}
+}

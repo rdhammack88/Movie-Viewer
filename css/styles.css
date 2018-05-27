@@ -1,94 +1,172 @@
+/*! Load Fonts */
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif|Josefin+Sans|Josefin+Slab|Merriweather|Oswald|Roboto+Slab");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Caveat+Brush|Cinzel|Gloria+Hallelujah|Indie+Flower|Kaushan+Script|Lobster|Luckiest+Guy|Permanent+Marker|Philosopher|Playfair+Display+SC");
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 100%;
+  font-family: Ariel, sans-serif; }
+
+h2 {
+  height: 100%;
+  padding: 15px 0 15px 7px;
+  color: #0abbff; }
+  @media (min-width: 768px) {
+    h2 {
+      width: 100%; } }
+
+ul {
+  list-style: none;
+  padding-left: 0; }
+
+nav h2 {
+  display: inline-block; }
+  @media (min-width: 768px) {
+    nav h2 {
+      display: block; } }
+  nav h2 .brand-logo > a:hover {
+    text-decoration: none; }
+nav .nav-item:first-of-type > a.nav-link:hover {
+  color: #DF691A; }
+nav .nav-item:last-of-type .nav-link {
+  margin-left: 0 !important; }
+  @media (min-width: 768px) {
+    nav .nav-item:last-of-type .nav-link {
+      margin-left: 1rem !important; } }
+
 form {
   max-width: 800px;
   margin: 0 auto; }
 
-.brand-logo > a:hover {
-  text-decoration: none; }
-
 /* Search Bar */
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-top: 20px;
+  padding-bottom: 20px; }
 
 /* Search Results Page */
 .movie-search-info {
   max-width: 1000px; }
-  .movie-search-info .movie-error {
+  .movie-search-info #movies .movie-error {
     width: 100%;
     font-size: 22px;
     text-align: center; }
-  .movie-search-info .loading-results {
+  .movie-search-info #movies .loading-results {
     width: 100vw;
     font-size: 4.4em;
     text-align: center; }
+    .movie-search-info #movies .loading-results .loading-dot1 {
+      animation: loading-dot1 .4s infinite; }
+    .movie-search-info #movies .loading-results .loading-dot2 {
+      animation: loading-dot2 1s infinite; }
+    .movie-search-info #movies .loading-results .loading-dot3 {
+      animation: loading-dot3 1s infinite; }
+  .movie-search-info #movies .movie-error {
+    width: 100vw;
+    font-size: 2.4em;
+    text-align: center; }
+  .movie-search-info #movies .col-md-4 {
+    margin: 100px 0 100px;
+    box-sizing: border-box; }
+  .movie-search-info #movies .well {
+    height: 100%;
+    position: relative;
+    border: 1px solid #999;
+    border-radius: 10px;
+    box-sizing: content-box;
+    padding-bottom: 25px;
+    background-color: rgba(44, 44, 44, 0.6); }
+  .movie-search-info #movies img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 88%; }
+  .movie-search-info #movies div.details {
+    height: 12%;
+    margin-bottom: 50px; }
+  .movie-search-info #movies h5 {
+    height: 90%;
+    padding: 15px 5px 0px;
+    margin: 0;
+    font-size: 1.1rem;
+    box-sizing: content-box; }
+  .movie-search-info #movies p.details-btn {
+    text-align: center;
+    width: 100%;
+    margin: 0; }
+  .movie-search-info #movies p.details-btn a.btn {
+    border-radius: 5px; }
+  @media (min-width: 768px) {
+    .movie-search-info #movies .col-md-4 {
+      max-height: 400px; }
+    .movie-search-info #movies img {
+      height: 80%; }
+    .movie-search-info #movies div.details {
+      height: 20%; } }
   .movie-search-info .pagination-links {
     text-align: center;
     margin-top: 60px; }
 
-#movies .col-md-4 {
-  margin: 100px 0 100px;
-  box-sizing: border-box; }
-#movies .well {
-  height: 100%;
-  position: relative;
-  border: 1px solid #999;
-  border-radius: 10px;
-  box-sizing: content-box;
-  padding-bottom: 25px;
-  background-color: rgba(44, 44, 44, 0.6); }
-#movies img {
-  border-radius: 10px 10px 0 0;
-  width: 100%;
-  height: 88%; }
-#movies div.details {
-  height: 12%;
-  margin-bottom: 50px; }
-#movies h5 {
-  height: 90%;
-  padding: 15px 5px 0px;
-  margin: 0;
-  font-size: 1.1rem;
-  box-sizing: content-box; }
-#movies p.details-btn {
-  text-align: center;
-  width: 100%;
-  margin: 0; }
-#movies p.details-btn a.btn {
-  border-radius: 5px; }
-
 /* Movie Info Display Page */
 .movie-info {
   max-width: 1200px; }
+  .movie-info .loading-results {
+    width: 100vw;
+    font-size: 4.4em;
+    text-align: center; }
+    .movie-info .loading-results .loading-dot1 {
+      animation: loading-dot1 .4s infinite; }
+    .movie-info .loading-results .loading-dot2 {
+      animation: loading-dot2 1s infinite; }
+    .movie-info .loading-results .loading-dot3 {
+      animation: loading-dot3 1s infinite; }
+  .movie-info .movie-error {
+    width: 90vw;
+    margin: 0 auto;
+    font-size: 1.4em;
+    text-align: center; }
+  .movie-info #movie .movie-title {
+    text-align: center;
+    margin-bottom: 5%; }
+  .movie-info #movie .col-sm-6 {
+    padding-top: 47px; }
+  .movie-info #movie img {
+    width: 100%; }
+  .movie-info #movie ul li {
+    text-align: right; }
+  .movie-info #movie ul li strong {
+    color: #222;
+    float: left; }
+  .movie-info #movie .movie-plot-container {
+    margin-top: 20px; }
+  @media (min-width: 1200px) {
+    .movie-info #movie .col-sm-6 {
+      padding-top: 0;
+      margin-top: -50px; }
+    .movie-info #movie .movie-plot-container {
+      margin-top: -25px; } }
 
-#movie .movie-title {
-  text-align: center; }
-#movie .col-sm-6 {
-  padding-top: 47px; }
-#movie img {
-  width: 100%; }
-#movie ul li {
-  text-align: right; }
-#movie ul li strong {
-  color: #222;
-  float: left; }
-
+@keyframes loading-dot1 {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 1; } }
+@keyframes loading-dot2 {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+@keyframes loading-dot3 {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  75% {
+    opacity: 1; } }
 footer {
   height: 100px; }
-
-@media only screen and (min-width: 768px) {
-  #movies .col-md-4 {
-    max-height: 400px; }
-  #movies img {
-    height: 80%; }
-  #movies div.details {
-    height: 20%; }
-
-  #movie .col-md-8 {
-    padding-top: 38px; }
-  #movie .col-sm-6 {
-    padding-top: 0;
-    margin-top: -50px; }
-  #movie .movie-plot-container {
-    margin-top: 70px; } }
 
 /*# sourceMappingURL=styles.css.map */
