@@ -38,7 +38,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a href="./#/login" class="nav-link">Login</a></li>
+						<li class="nav-item active"><a href="./#/login" class="nav-link btn">Login</a></li>
 						<li class="nav-item active"><a href="./#/signup" class="nav-link ml-3 btn btn-outline-primary">Signup</a></li>
 					</ul>
 				</div>
