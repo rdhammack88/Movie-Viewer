@@ -31,6 +31,13 @@
 		.movie-title {
 			text-align: center;
 			margin-bottom: 5%;
+			
+			.favorite-btn {
+				background-color: rgba(0,0,0,0);
+				font-size: 1.1em;
+				outline: none;
+				border: none;
+			}
 		}
 
 		.col-sm-6 {
