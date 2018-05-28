@@ -14,18 +14,19 @@
 -->
 
 <div class="container-fluid movie-info">
-	<div id="movie" class="well">
 	
-		<div class="text-danger movie-error" ng-hide="movieTitle">{{error}}</div>
-		<div class="loading-results" ng-hide="movieTitle || error">
-			{{loadResults}} 
-			<span class="loading-dot1">.</span>
-			<span class="loading-dot2">.</span>
-			<span class="loading-dot3">.</span> 
-		</div>
+	<div class="text-danger movie-error" ng-hide="movieTitle">{{error}}</div>
+	<div class="loading-results" ng-hide="movieTitle || error">
+		{{loadResults}} 
+		<span class="loading-dot1">.</span>
+		<span class="loading-dot2">.</span>
+		<span class="loading-dot3">.</span> 
+	</div>
+	
+	<div id="movie" class="well">
 		<div class="row m-auto">
-			<h2 class="movie-title" ng-show="movieTitle">{{movieTitle}} &nbsp;&nbsp; <span ng-click="favMovie()"><i ng-class="{'fas' : {{toggle}}, 
-				'far' : {{!toggle}}}" class="fa-heart"></i></span> </h2> <!-- ng-class="toggle ? 'far' : 'fas'"    || {'fas' : toggle} -->
+			<h2 class="movie-title" ng-show="movieTitle">{{movieTitle}} &nbsp;&nbsp; <button class="favorite-btn" ng-click="favMovie()"><i ng-class="{'fas' : toggle, 
+				'far' : !toggle}" class="fa-heart"></i></button> </h2> <!-- ng-class="toggle ? 'far' : 'fas'"    || {'fas' : toggle} -->
 		</div>
 		<div class="row" ng-show="movieTitle">
 
