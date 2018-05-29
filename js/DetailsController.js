@@ -30,6 +30,7 @@
 		
 		$scope.favMovie = function() {
 			console.log('clicked');
+			console.log($scope.toggle);
 			
 			$scope.toggle = !$scope.toggle;
 			
