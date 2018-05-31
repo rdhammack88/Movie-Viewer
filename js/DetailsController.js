@@ -29,12 +29,7 @@
 		}
 		
 		$scope.favMovie = function() {
-			console.log('clicked');
-			console.log($scope.toggle);
-			
 			$scope.toggle = !$scope.toggle;
-			
-			console.log($scope.toggle);
 		}
 		
 //		$scope.movieQuery = movieSearch.movieQuery;
