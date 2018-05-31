@@ -29,14 +29,20 @@
 
 	#movie {
 		.movie-title {
-			text-align: center;
-			margin-bottom: 5%;
+			text-align: right;
+			padding-right: 30px;
+			margin-bottom: 1%;
+			color: $offwhite;
 			
 			.favorite-btn {
 				background-color: rgba(0,0,0,0);
-				font-size: 1.1em;
+				font-size: .8em;
 				outline: none;
 				border: none;
+				
+				> span.favheart > svg > path {
+					fill: $red;
+				}
 			}
 		}
 
