@@ -3,3 +3,5 @@ lib/jquery/
 css/modules/_header2.scss
 tests.html
 imgs/
+includes/connection.php
+includes/
