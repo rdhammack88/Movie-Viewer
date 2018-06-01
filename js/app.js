@@ -30,11 +30,11 @@ movieApp.config(['$routeProvider', function($routeProvider) {
 		controller: 'DetailsController'
 	})
 	.when('/login', {
-		templateUrl: 'user/login.php',
+		templateUrl: 'js/partials/user/login.php',
 		controller: 'LoginController'
 	})
 	.when('/signup', {
-		templateUrl: 'user/signup.php',
+		templateUrl: 'js/partials/user/signup.php',
 		controller: 'SignupController'
 	})
 	.otherwise({redirectTo: "/"})

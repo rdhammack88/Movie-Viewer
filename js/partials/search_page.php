@@ -14,7 +14,7 @@
 -->
 
 
-<div class="container movie-search-info">
+<div class="container movie-search-info" ng-controller="SearchController">
 	<div id="movies" class="row" ng-if="movieQuery">
 <!--	<p>{{movieQuery}}</p>-->
 
@@ -29,8 +29,9 @@
 		<div class="col-md-4 col-lg-3 col-sm-6 offset-sm-3"
 			 ng-repeat="movie in movies"> <!-- N/A -->
 <!--		 ng-repeat="movie in movies"-->
-			<div class="well text-center" ng-if="movie.Poster !== 'N/A'">
-				<img ng-src="{{movie.Poster}}">
+			<div class="well text-center" >
+				<img ng-if="movie.Poster === 'N/A'" src="imgs/unavailable.png">
+				<img ng-if="movie.Poster !== 'N/A'" ng-src="{{movie.Poster}}">
 				<div class="details">
 					<h5> {{movie.Title}} </h5>
 					<p class="details-btn">
@@ -50,7 +51,7 @@
 	
 	<br/>
 	<div class="pagination-links" ng-if="movies">
-		<p><span> Showing page {{pageNumber}} of {{totalResults}}</span> </p>
-		<p><a ng-click="prevPage()" class="btn btn-primary" ng-show="pageNumber !== 1">Prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="nextPage()" class="btn btn-primary" ng-show="pageNumber !== totalResults">Next</a></p>
+		<p><span> Showing page {{pageNumber}} of {{totalResults || 1}}</span> </p>
+		<p><a ng-click="prevPage()" class="btn btn-primary" ng-show="pageNumber !== 1">Prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="nextPage()" class="btn btn-primary" ng-show="pageNumber !== totalResults && totalResults !== 1">Next</a></p>
 	</div>
 </div>
