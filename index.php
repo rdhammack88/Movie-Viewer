@@ -51,7 +51,7 @@
 				<form id="searchForm" class="input-group container mb-3" ng-submit="findMovie(movieQuery)">
 					<input type="search" class="form-control" id="searchText" placeholder="Search Movies" aria-label="Search" ng-model="movieQuery">
 					<div class="input-group-append">
-						<button class="btn btn-primary" type="submit" ng-click="findMovie(movieQuery)">Search Movie</button>
+						<input class="btn btn-primary" type="submit" value="Search Movie" /> <!--  ng-click="findMovie(movieQuery)" -->
 					</div>
 				</form>
 			</div>
