@@ -16,15 +16,16 @@
 		$scope.findMovie = function(movie) {
 			$scope.storeMovieSession();
 //			$scope.movies = movie;
-			$location.path('/search/' + $scope.pageNumber);
 			$scope.loadResults = 'Loading';
 			
 			omdb.getMovie($scope.movieQuery, $scope.pageNumber).then(function(data) {
 //				$location.path("js/partials/search_page.php");
 				$scope.movies = data.Search;
 				
-				$scope.totalResults = data.totalResults % 10 === 0 ?data.totalResults / 10 : Math.floor(data.totalResults / 10);
-								
+				$scope.totalResults = data.totalResults % 10 === 0 ?data.totalResults / 10 : Math.floor(data.totalResults / 10) + 1;
+				$scope.totalResults = $scope.totalResults === 1 ? 1 : $scope.totalResults;
+				
+				console.log('find movie clicked');
 				$log.log(data);
 				
 				if(data.Response === "False") {
@@ -33,6 +34,7 @@
 			}, findMovieError);
 												  
 			$log.log($scope.movies);
+			$location.path('/search/' + $scope.pageNumber);
 		}
 		
 		$scope.nextPage = function() {
@@ -46,6 +48,7 @@
 		};
 		
 		$scope.storeMovieSession = function() {
+			sessionStorage.removeItem('storedMovie');
 			sessionStorage.setItem('storedMovie', $scope.movieQuery);
 //			$scope.movieQuery = movieSearch.movieQuery;
 //			
