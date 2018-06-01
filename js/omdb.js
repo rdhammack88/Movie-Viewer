@@ -12,7 +12,7 @@
 			return $http.get('https://www.omdbapi.com/?apikey=a336cd51&i=' + movieId)
 						.then(function(res) {
 							return res.data;
-						})
+						});
 		}
 		
 		return {
