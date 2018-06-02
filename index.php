@@ -1,3 +1,7 @@
+<?php
+//	include('includes/init.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en" ng-app="movieApp">
 <head>
@@ -23,6 +27,8 @@
 	<script src="js/services.js"></script>
 	<script src="js/SearchController.js"></script>
 	<script src="js/DetailsController.js"></script>
+	<script src="js/LoginController.js"></script>
+	<script src="js/SignupController.js"></script>
 	<script src="js/omdb.js"></script>
 <!--	<script src="js/controllers.js"></script>-->
 </head>
